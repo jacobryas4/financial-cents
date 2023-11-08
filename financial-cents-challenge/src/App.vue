@@ -15,7 +15,6 @@ const dataLoading = ref(false);
 
 // A method to fetch data from an API
 const fetchData = async (pageNo) => {
-  console.log("fetchData firing", Number(pageNo));
   dataLoading.value = true;
   try {
     const response = await fetch(`https://reqres.in/api/users?page=${pageNo}`);
@@ -24,7 +23,6 @@ const fetchData = async (pageNo) => {
     }
     data.value = await response.json();
     totalPages.value = Number(data.value.total_pages);
-    console.log("DATA", currentPage.value);
     const users = data.value.data.map((user) => {
       const randomStatus = Math.random() > 0.5 ? "Paid" : "Overdue";
       const randomAmount = Math.floor(Math.random() * 100000);
@@ -40,7 +38,6 @@ const fetchData = async (pageNo) => {
     userData.value = users;
     dataLoading.value = false;
   } catch (err) {
-    console.log("error?", err);
     error.value = err;
     dataLoading.value = false;
   }
@@ -48,7 +45,6 @@ const fetchData = async (pageNo) => {
 
 // watch the current page value, fetch new data when it changes
 watch(currentPage, (newValue, oldValue) => {
-  console.log("watch firing", newValue, oldValue);
   fetchData(newValue);
 });
 
@@ -59,20 +55,16 @@ const disableNext = computed(() => {
   return currentPage.value === totalPages.value;
 });
 const handlePageChange = (page) => {
-  console.log("handlePageChange firing", page);
   currentPage.value = Number(page);
 };
 const nextPage = () => {
-  console.log("nextPage firing");
   currentPage.value += 1;
 };
 const previousPage = () => {
-  console.log("previousPage firing");
   currentPage.value -= 1;
 };
 
 onMounted(() => {
-  console.log("mounted");
   fetchData(1);
 });
 </script>

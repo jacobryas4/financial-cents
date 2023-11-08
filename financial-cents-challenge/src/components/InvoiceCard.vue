@@ -78,7 +78,6 @@ export default {
   },
   methods: {
     toggleDropdown(event) {
-      console.log("toggleDropdown", this.showDropdown);
       if (this.showDropdown) {
         this.showDropdown = false;
       } else {
