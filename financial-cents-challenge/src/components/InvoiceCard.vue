@@ -20,6 +20,7 @@
             alt="Menu"
             class="w-7 h-7 cursor-pointer hover:bg-fc-green-medium rounded-full py-1"
             :class="showDropdown ? 'bg-fc-green-medium' : ''"
+            id="click-override"
           />
           <transition name="fade">
             <div
@@ -82,10 +83,13 @@ export default {
       } else {
         this.showDropdown = true;
       }
-      event.stopPropagation();
+    //   event.stopPropagation();
     },
-    closeDropdown() {
-      console.log("closeDropdown");
+    closeDropdown(event) {
+      // return early if we click the menu button 
+      if (event.target.id === "click-override") {
+        return;
+      }
       this.showDropdown = false;
     },
     viewInvoice() {
