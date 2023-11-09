@@ -139,7 +139,6 @@ header {
 .invoice-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   width: 100%;
@@ -150,7 +149,7 @@ header {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* On screens wider than 600px, display 2 cards per row */
+    ); 
   }
 }
 
@@ -159,7 +158,7 @@ header {
     grid-template-columns: repeat(
       3,
       1fr
-    ); /* On screens wider than 900px, display 3 cards per row */
+    ); 
   }
 }
 

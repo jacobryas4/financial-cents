@@ -1,6 +1,6 @@
 <template>
   <button :disabled="disabled" @click="onClick" class="pagination-button font-semibold">
-    <slot></slot> <!-- This is where the button text will be inserted -->
+    <slot></slot> 
   </button>
 </template>
 
@@ -32,21 +32,21 @@ export default {
 .pagination-button {
   padding: 10px 20px;
   margin: 5px;
-  background-color: var(--fc-green-dark); /* Green background */
+  background-color: var(--fc-green-dark); 
   border: 1px solid var(--fc-green-dark);
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  transition-duration: 0.4s; /* Transition effect */
+  transition-duration: 0.4s; 
   cursor: pointer;
   border-radius: 4px;
 }
 
 .pagination-button:hover {
   background-color: white;
-  color: var(--fc-green-dark); /* Green text */
+  color: var(--fc-green-dark); 
   border: 1px solid var(--fc-green-dark);
 }
 

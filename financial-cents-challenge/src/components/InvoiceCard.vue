@@ -34,7 +34,6 @@
           </transition>
         </div>
       </div>
-      <!-- Placeholder for other header elements -->
     </div>
     <div class="card-body">
       <div class="invoice-info">
@@ -104,7 +103,6 @@ export default {
   },
   computed: {
     formattedAmount() {
-      // Assuming invoice.amount is a number
       return `$${this.user.amount}`;
     },
     statusClass() {
@@ -124,13 +122,11 @@ export default {
 }
 
 .card-header {
-  /* Styles for the header */
   display: flex;
   align-items: center;
 }
 
 .profile-pic {
-  /* Styles for the profile picture */
   width: 50px;
   height: 50px;
   border-radius: 25px;
@@ -138,7 +134,6 @@ export default {
 }
 
 .card-body {
-  /* Styles for the body */
   padding: 16px;
 }
 
@@ -149,13 +144,11 @@ export default {
 }
 
 .overdue {
-  /* Styles for overdue status */
   color: #dd1c1a;
   background-color: var(--fc-red-light);
 }
 
 .paid {
-  /* Styles for paid status TODO - lighten background color */
   color: #059669;
   background-color: var(--fc-green-light);
 }
@@ -170,7 +163,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
@@ -187,13 +180,11 @@ export default {
   transform-origin: top right;
 }
 
-/* When dropdown is visible */
 .dropdown-content-enter-active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Initial state of dropdown before it's visible */
 .dropdown-content-enter {
   opacity: 0;
   transform: translateY(-20px);

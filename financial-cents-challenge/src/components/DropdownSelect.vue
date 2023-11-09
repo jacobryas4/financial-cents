@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
     <select @change="handleChange" :value="modelValue" class="dropdown-select">
-      <slot></slot> <!-- This is where the dropdown options will be inserted -->
+      <slot></slot> 
     </select>
   </div>
 </template>
@@ -28,10 +28,9 @@ export default {
 
 <style scoped>
 .dropdown {
-  /* Styles for the dropdown container */
   position: relative;
   display: inline-block;
-  margin: 0 10px; /* Adjust spacing to match your layout */
+  margin: 0 10px; 
 }
 
 .dropdown-select {
